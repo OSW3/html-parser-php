@@ -33,9 +33,9 @@ $document->parseFromUrl($url, $options);
 // print_r($document->options());
 // print_r($document->process());
 
-print_r("Charset : ");
-print_r($document->charset());
-print_r("\n\n");
+// print_r("Charset : ");
+// print_r($document->charset());
+// print_r("\n\n");
 
 // print_r("Lang (code) : ");
 // print_r($document->lang('code'));

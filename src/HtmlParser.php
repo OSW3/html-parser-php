@@ -26,7 +26,8 @@ use OSW3\HtmlParser\Components\Videos;
 
 class HtmlParser 
 {
-    private Document $document;
+    private string $document;
+    // private Document $document;
     private array $url;
 
     // public function __construct(string $url, array $options = array())
@@ -41,7 +42,9 @@ class HtmlParser
         $urlParser = new UrlParser();
 
         $this->url = $urlParser->parse($url, true, true);
-        $this->document = $client->get($url, $header, $stream);
+        
+        $request = $client->get($url, $header, $stream);
+        $this->document = $request->content();
     }
     public function parseFromDom(string $dom, array $options = array())
     {
@@ -58,37 +61,37 @@ class HtmlParser
     /// HttpClient Response
     /// =======================================
     
-    public function header()
-    {
-        return $this->document->header();
-    }
+    // public function header()
+    // {
+    //     return $this->document->header();
+    // }
     
-    public function content()
-    {
-        return $this->document->content();
-    }
+    // public function content()
+    // {
+    //     return $this->document;
+    // }
     
-    public function error()
-    {
-        return $this->document->error();
-    }
+    // public function error()
+    // {
+    //     return $this->document->error();
+    // }
     
-    public function options()
-    {
-        return $this->document->options();
-    }
+    // public function options()
+    // {
+    //     return $this->document->options();
+    // }
     
-    public function process()
-    {
-        return $this->document->process();
-    }
+    // public function process()
+    // {
+    //     return $this->document->process();
+    // }
     
     /// Parser Response
     /// =======================================
 
     public function charset(): ?string
     {
-        $charset = new Charset($this->document->content());
+        $charset = new Charset($this->document);
 
         return $charset->charset();
     }
@@ -98,7 +101,7 @@ class HtmlParser
         $arguments = func_get_args();
         $arguments = isset($arguments[0]) ? $arguments[0] : null;
 
-        $lang = new Lang($this->document->content());
+        $lang = new Lang($this->document);
 
         switch ($arguments)
         {
@@ -121,7 +124,7 @@ class HtmlParser
         $arguments = func_get_args();
         $arguments = isset($arguments[0]) ? $arguments[0] : null;
 
-        $title = new Title($this->document->content());
+        $title = new Title($this->document);
 
         switch ($arguments)
         {
@@ -140,7 +143,7 @@ class HtmlParser
         $arguments = func_get_args();
         $arguments = isset($arguments[0]) ? $arguments[0] : null;
 
-        $description = new Description($this->document->content());
+        $description = new Description($this->document);
 
         switch ($arguments)
         {
@@ -161,7 +164,7 @@ class HtmlParser
         $arguments = func_get_args();
         $arguments = isset($arguments[0]) ? $arguments[0] : null;
 
-        $keywords = new Keywords($this->document->content());
+        $keywords = new Keywords($this->document);
 
         switch ($arguments)
         {
@@ -183,7 +186,7 @@ class HtmlParser
         $arguments = isset($arguments[0]) ? $arguments[0] : null;
 
         $favicon = new Favicon(
-            $this->document->content(),
+            $this->document,
             $this->url
         );
 
@@ -204,7 +207,7 @@ class HtmlParser
     public function icons(): array
     {
         $icons = new Icons(
-            $this->document->content(),
+            $this->document,
             $this->url
         );
 
@@ -216,7 +219,7 @@ class HtmlParser
         $arguments = func_get_args();
         $arguments = isset($arguments[0]) ? $arguments[0] : null;
 
-        $og = new OpenGraph($this->document->content());
+        $og = new OpenGraph($this->document);
 
         switch ($arguments)
         {
@@ -262,7 +265,7 @@ class HtmlParser
         $arguments = func_get_args();
         $arguments = isset($arguments[0]) ? $arguments[0] : null;
 
-        $twtr = new TwitterCard($this->document->content());
+        $twtr = new TwitterCard($this->document);
 
         switch ($arguments)
         {
@@ -306,35 +309,35 @@ class HtmlParser
 
     public function feeds(): array
     {
-        $feeds = new Feeds($this->document->content());
+        $feeds = new Feeds($this->document);
 
         return $feeds->list();
     }
 
     public function oEmbed(): array
     {
-        $oEmbed = new OEmbed($this->document->content());
+        $oEmbed = new OEmbed($this->document);
 
         return $oEmbed->list();
     }
 
     public function meta(): array
     {
-        $meta = new Meta($this->document->content());
+        $meta = new Meta($this->document);
 
         return $meta->list();
     }
 
     public function canonical(): ?string
     {
-        $canonical = new Canonical($this->document->content());
+        $canonical = new Canonical($this->document);
         
         return $canonical->url();
     }
 
     public function alternates(): array
     {
-        $alternate = new Alternate($this->document->content());
+        $alternate = new Alternate($this->document);
         
         return $alternate->list();
     }
@@ -342,7 +345,7 @@ class HtmlParser
     public function images(): array
     {
         $images = new Images(
-            $this->document->content(),
+            $this->document,
             $this->url
         );
 
@@ -352,7 +355,7 @@ class HtmlParser
     public function audios(): array
     {
         $audios = new Audios(
-            $this->document->content(),
+            $this->document,
             $this->url
         );
 
@@ -362,7 +365,7 @@ class HtmlParser
     public function videos(): array
     {
         $videos = new Videos(
-            $this->document->content(),
+            $this->document,
             $this->url
         );
 
@@ -372,7 +375,7 @@ class HtmlParser
     public function links(): array
     {
         $anchors = new Anchors(
-            $this->document->content(),
+            $this->document,
             $this->url
         );
 
@@ -381,7 +384,7 @@ class HtmlParser
     
     public function author(): ?string
     {
-        $author = new Author($this->document->content(),);
+        $author = new Author($this->document,);
 
         return $author->text();
     }
