@@ -2,19 +2,10 @@
 namespace OSW3\HtmlParser\Components;
 
 use DOMElement;
-use OSW3\HtmlParser\AbstractComponent;
+use OSW3\HtmlParser\Abstract\AbstractComponent;
 
 class Icons extends AbstractComponent
 {
-    // private array $url = [];
-
-    // public function __construct($document, $url)
-    // {
-    //     parent::__construct($document);
-
-    //     $this->url = $url;
-    // }
-
     public function list(): array
     {
         $list = array();
@@ -39,31 +30,6 @@ class Icons extends AbstractComponent
         
         return $list;
     }
-
-    // public function url($href): ?string
-    // {
-    //     if (!$href)
-    //     {
-    //         return null;
-    //     }
-
-    //     if (preg_match("/^http(s)?/", $href))
-    //     {
-    //         return $href;
-    //     }
-
-    //     $url = $this->url['protocol'];
-    //     $url.= $this->url['authority'];
-
-    //     if (substr($href, 0, 1) !== "/")
-    //     {
-    //         $url.= "/";
-    //     }
-
-    //     $url.= $href;
-        
-    //     return $url;
-    // }
 
     public function type(DOMElement $node): ?string
     {

@@ -1,19 +1,10 @@
 <?php 
 namespace OSW3\HtmlParser\Components;
 
-use OSW3\HtmlParser\AbstractComponent;
+use OSW3\HtmlParser\Abstract\AbstractComponent;
 
 class Images extends AbstractComponent
 {
-    // private array $url = [];
-
-    // public function __construct($document, $url)
-    // {
-    //     parent::__construct($document);
-
-    //     $this->url = $url;
-    // }
-
     public function list(): array
     {
         $list = array();

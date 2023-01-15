@@ -1,7 +1,7 @@
 <?php 
 namespace OSW3\HtmlParser\Components;
 
-use OSW3\HtmlParser\AbstractComponent;
+use OSW3\HtmlParser\Abstract\AbstractComponent;
 
 class Audios extends AbstractComponent
 {

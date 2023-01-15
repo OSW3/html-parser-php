@@ -6,7 +6,7 @@ print_r("\n");
 
 require "../vendor/autoload.php";
 use OSW3\HtmlParser\HtmlParser;
-    
+use OSW3\HtmlParser\RemoteHtmlParser;
 
 /// ======================================= ///
 /// Test : Parser                           ///
@@ -19,19 +19,24 @@ $stream  = array();
 $options = array();
 
 
-$options['header'] = $header;
-$options['stream'] = $stream;
+$options['header']  = $header;
+$options['stream']  = $stream;
+$document = new RemoteHtmlParser($url, $options);
 
-// $document = new HtmlParser($url, $options);
-$document = new HtmlParser();
-
-$document->parseFromUrl($url, $options);
-
+// RemoteHtmlParser (request Response)
+// -----
 // print_r($document->header());
 // print_r($document->content());
 // print_r($document->error());;
 // print_r($document->options());
 // print_r($document->process());
+
+
+
+// $html = file_get_contents(__DIR__."/test.html");
+// $document = new HtmlParser($html);
+
+
 
 // print_r("Charset : ");
 // print_r($document->charset());
@@ -207,9 +212,9 @@ $document->parseFromUrl($url, $options);
 // print_r($document->oEmbed());
 // print_r("\n\n");
 
-// print_r("Images : ");
-// print_r($document->images());
-// print_r("\n\n");
+print_r("Images : ");
+print_r($document->images());
+print_r("\n\n");
 
 // print_r("Audios : ");
 // print_r($document->audios());
@@ -223,9 +228,9 @@ $document->parseFromUrl($url, $options);
 // print_r($document->links());
 // print_r("\n\n");
 
-// print_r("Author : ");
-// print_r($document->author());
-// print_r("\n\n");
+print_r("Author : ");
+print_r($document->author());
+print_r("\n\n");
 
 
 

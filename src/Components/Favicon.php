@@ -2,7 +2,7 @@
 namespace OSW3\HtmlParser\Components;
 
 use DOMElement;
-use OSW3\HtmlParser\AbstractComponent;
+use OSW3\HtmlParser\Abstract\AbstractComponent;
 
 class Favicon extends AbstractComponent 
 {

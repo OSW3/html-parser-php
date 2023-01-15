@@ -1,5 +1,5 @@
 <?php
-namespace OSW3\HtmlParser;
+namespace OSW3\HtmlParser\Abstract;
 
 use DOMDocument;
 use DOMNodeList;
@@ -8,16 +8,16 @@ abstract class AbstractComponent
 {
     protected DOMDocument $dom;
     protected string|null $value = null;
-    protected $url;
+    protected $baseHref;
 
     
-    public function __construct($document, $url = null)
+    public function __construct($document, $baseHref = "/")
     {
         libxml_use_internal_errors(true);
         $this->dom = new \DOMDocument;
         $this->dom->loadHTML($document);
 
-        $this->url = $url;
+        $this->baseHref = $baseHref;
     }
 
     protected function html()
@@ -59,8 +59,9 @@ abstract class AbstractComponent
             return $href;
         }
 
-        $url = $this->url['protocol'];
-        $url.= $this->url['authority'];
+        $url = $this->baseHref;
+        // $url = $this->url['protocol'];
+        // $url.= $this->url['authority'];
 
         if (substr($href, 0, 1) !== "/")
         {
