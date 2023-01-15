@@ -332,15 +332,15 @@ abstract class AbstractParser
         return $author->text();
     }
 
-
-
-    
-    public function articles(): ?string
+    public function articles(): array
     {
         $articles = new Articles($this->document);
 
         return $articles->list();
     }
+
+
+    
 
     // Sitemap
     // Manifest

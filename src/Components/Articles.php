@@ -22,7 +22,6 @@ class Articles extends AbstractComponent
         // $document = preg_replace('#<noscript(.*?)>(.*?)</noscript>#is', '', $document);
         // $document = preg_replace('#<style(.*?)>(.*?)</style>#is', '', $document);
 
-
         preg_match_all("/<article.*?>(.*?)<\/article>/s", $document, $matches);
         $articles = $matches[0];
 
@@ -38,9 +37,6 @@ class Articles extends AbstractComponent
             $articles = $matches ?? [];
         }
 
-        print_r( $articles );
-
-
-        return array();
+        return $articles;
     }
 }
