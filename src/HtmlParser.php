@@ -29,7 +29,11 @@ class HtmlParser
     private Document $document;
     private array $url;
 
-    public function __construct(string $url, array $options = array())
+    // public function __construct(string $url, array $options = array())
+    // {
+    // }
+
+    public function parseFromUrl(string $url, array $options = array())
     {
         $header = $options['header'];
         $stream = $options['stream'];
@@ -37,7 +41,18 @@ class HtmlParser
         $urlParser = new UrlParser();
 
         $this->url = $urlParser->parse($url, true, true);
-        $this->document = $client->get($url, $header, $stream);;
+        $this->document = $client->get($url, $header, $stream);
+    }
+    public function parseFromDom(string $dom, array $options = array())
+    {
+        // $header = $options['header'];
+        // $stream = $options['stream'];
+        // $client = new HttpClient();
+        // $urlParser = new UrlParser();
+
+        // $this->url = $urlParser->parse($url, true, true);
+        // $this->document = $client->get($url, $header, $stream);
+        $this->document = $dom;
     }
 
     /// HttpClient Response
