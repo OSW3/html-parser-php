@@ -1,0 +1,93 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "19e5904ed3f61b50268a54ebe88327fe",
+    "packages": [
+        {
+            "name": "osw3/http-client-php",
+            "version": "0.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OSW3/http-client-php.git",
+                "reference": "852bfa4efb18211b1b76741ecef8fd267a4261ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OSW3/http-client-php/zipball/852bfa4efb18211b1b76741ecef8fd267a4261ba",
+                "reference": "852bfa4efb18211b1b76741ecef8fd267a4261ba",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OSW3\\HttpClient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "OSW3",
+                    "email": "contact@osw3.net"
+                }
+            ],
+            "description": "Provides a simple HTTP-Client",
+            "support": {
+                "issues": "https://github.com/OSW3/http-client-php/issues",
+                "source": "https://github.com/OSW3/http-client-php/tree/0.0.7"
+            },
+            "time": "2023-01-09T23:10:39+00:00"
+        },
+        {
+            "name": "osw3/url-parser-php",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OSW3/url-parser-php.git",
+                "reference": "a1bfd95e5fab5d4d8ebe52512c849333b569af98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OSW3/url-parser-php/zipball/a1bfd95e5fab5d4d8ebe52512c849333b569af98",
+                "reference": "a1bfd95e5fab5d4d8ebe52512c849333b569af98",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OSW3\\UrlParser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "OSW3",
+                    "email": "contact@osw3.net"
+                }
+            ],
+            "description": "Provides a simple HTTP-Client",
+            "support": {
+                "issues": "https://github.com/OSW3/url-parser-php/issues",
+                "source": "https://github.com/OSW3/url-parser-php/tree/0.0.2"
+            },
+            "time": "2023-01-10T10:57:42+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

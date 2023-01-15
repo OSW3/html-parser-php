@@ -1,0 +1,19 @@
+{
+    "name": "osw3/html-parser-php",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "OSW3\\HtmlParser\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "OSW3",
+            "email": "contact@osw3.net"
+        }
+    ],
+    "require": {
+        "osw3/http-client-php": "^0.0.7",
+        "osw3/url-parser-php": "^0.0.2"
+    }
+}
