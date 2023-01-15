@@ -10,7 +10,7 @@ abstract class AbstractComponent
     protected string|null $value = null;
     protected $baseHref;
 
-    
+
     public function __construct($document, $baseHref = "/")
     {
         libxml_use_internal_errors(true);

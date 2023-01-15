@@ -12,7 +12,7 @@ class Anchors extends AbstractComponent
         
         foreach ($img as $node)
         {
-            $label = $node->textContent;
+            $label = trim($node->textContent);
             $href = $node->getAttribute('href');
             $title = $node->getAttribute('title');
             $target = $node->getAttribute('target');

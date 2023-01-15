@@ -5,7 +5,7 @@
 // return "https://www.w3schools.com/tags/att_meta_charset.asp#:~:text=The%20charset%20attribute%20specifies%20the,and%20symbols%20in%20the%20world!";
 // return "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol";
 // return "http://livetunes.io/test.php";
-return "https://yellow-sub.net/lactu/574263-les-beatles-et-les-beach-boys-ont-repris-la-meme-chanson-de-chuck-berry";
+// return "https://yellow-sub.net/lactu/574263-les-beatles-et-les-beach-boys-ont-repris-la-meme-chanson-de-chuck-berry";
 // return "https://monblogapple.com/2023/01/02/taille-part-croissance-analyse-et-previsions-du-marche-de-la-pommade-a-la-betamethasone-2022-2028/";
 // return "https://www.lemonde.fr/international/article/2023/01/02/peine-de-mort-aux-etats-unis-l-annee-des-executions-baclees_6156282_3210.html";
 // return "https://www.lemonde.fr/international/article/2023/01/02/peine-de-mort-aux-etats-unis-l-annee-des-executions-baclees_6156282_3210.html";

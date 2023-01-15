@@ -36,6 +36,8 @@ $document = new RemoteHtmlParser($url, $options);
 // $html = file_get_contents(__DIR__."/test.html");
 // $document = new HtmlParser($html);
 
+// print_r($document->content());
+
 
 
 // print_r("Charset : ");
@@ -88,9 +90,9 @@ $document = new RemoteHtmlParser($url, $options);
 // print_r("Keywords (length) : ");
 // print_r($document->keywords('length'));
 // print_r("\n");
-print_r("Keywords (list) : ");
-print_r($document->keywords('list'));
-print_r("\n");
+// print_r("Keywords (list) : ");
+// print_r($document->keywords('list'));
+// print_r("\n");
 // print_r("Keywords : ");
 // print_r($document->keywords());
 // print_r("\n\n");
@@ -231,6 +233,10 @@ print_r("\n");
 // print_r("Author : ");
 // print_r($document->author());
 // print_r("\n\n");
+
+print_r("Articles : ");
+print_r($document->articles());
+print_r("\n\n");
 
 
 

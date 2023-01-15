@@ -1,25 +1,26 @@
 <?php 
 namespace OSW3\HtmlParser\Abstract;
 
-use OSW3\HtmlParser\Components\Alternate;
-use OSW3\HtmlParser\Components\Anchors;
+use OSW3\HtmlParser\Components\Lang;
+use OSW3\HtmlParser\Components\Meta;
+use OSW3\HtmlParser\Components\Feeds;
+use OSW3\HtmlParser\Components\Icons;
+use OSW3\HtmlParser\Components\Title;
 use OSW3\HtmlParser\Components\Audios;
 use OSW3\HtmlParser\Components\Author;
-use OSW3\HtmlParser\Components\Canonical;
-use OSW3\HtmlParser\Components\Lang;
-use OSW3\HtmlParser\Components\Title;
+use OSW3\HtmlParser\Components\Images;
+use OSW3\HtmlParser\Components\OEmbed;
+use OSW3\HtmlParser\Components\Videos;
+use OSW3\HtmlParser\Components\Anchors;
 use OSW3\HtmlParser\Components\Charset;
 use OSW3\HtmlParser\Components\Favicon;
 use OSW3\HtmlParser\Components\Keywords;
-use OSW3\HtmlParser\Components\Description;
-use OSW3\HtmlParser\Components\Feeds;
-use OSW3\HtmlParser\Components\Icons;
-use OSW3\HtmlParser\Components\Images;
-use OSW3\HtmlParser\Components\Meta;
-use OSW3\HtmlParser\Components\OEmbed;
+use OSW3\HtmlParser\Components\Alternate;
+use OSW3\HtmlParser\Components\Articles;
+use OSW3\HtmlParser\Components\Canonical;
 use OSW3\HtmlParser\Components\OpenGraph;
+use OSW3\HtmlParser\Components\Description;
 use OSW3\HtmlParser\Components\TwitterCard;
-use OSW3\HtmlParser\Components\Videos;
 
 abstract class AbstractParser 
 {
@@ -329,6 +330,16 @@ abstract class AbstractParser
         $author = new Author($this->document,);
 
         return $author->text();
+    }
+
+
+
+    
+    public function articles(): ?string
+    {
+        $articles = new Articles($this->document);
+
+        return $articles->list();
     }
 
     // Sitemap

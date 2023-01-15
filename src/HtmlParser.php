@@ -9,4 +9,9 @@ class HtmlParser extends AbstractParser
     {
         $this->document = $document;
     }
+    
+    public function content()
+    {
+        return $this->document;
+    }
 }
