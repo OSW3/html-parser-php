@@ -23,10 +23,14 @@ class Keywords extends AbstractComponent
 
     public function list(): array
     {
-        return array_map(
+        $list = array();
+
+        if (!empty(trim($this->text()))) $list = array_map(
             fn($str) => trim($str), 
             explode(",", $this->text())
         );
+
+        return $list;
     }
 
     public function length(): int
