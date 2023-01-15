@@ -95,18 +95,18 @@ $document = new RemoteHtmlParser($url, $options);
 // print_r($document->keywords());
 // print_r("\n\n");
 
-// print_r("Favicon (href value): ");
-// print_r($document->favicon('href'));
-// print_r("\n");
-// print_r("Favicon (absolute url): ");
-// print_r($document->favicon('url'));
-// print_r("\n");
-// print_r("Favicon (type): ");
-// print_r($document->favicon('type'));
-// print_r("\n");
-// print_r("Favicon : ");
-// print_r($document->favicon());
-// print_r("\n\n");
+print_r("Favicon (href value): ");
+print_r($document->favicon('href'));
+print_r("\n");
+print_r("Favicon (absolute url): ");
+print_r($document->favicon('url'));
+print_r("\n");
+print_r("Favicon (type): ");
+print_r($document->favicon('type'));
+print_r("\n");
+print_r("Favicon : ");
+print_r($document->favicon());
+print_r("\n\n");
 
 // print_r("Icons : ");
 // print_r($document->icons());
@@ -212,9 +212,9 @@ $document = new RemoteHtmlParser($url, $options);
 // print_r($document->oEmbed());
 // print_r("\n\n");
 
-print_r("Images : ");
-print_r($document->images());
-print_r("\n\n");
+// print_r("Images : ");
+// print_r($document->images());
+// print_r("\n\n");
 
 // print_r("Audios : ");
 // print_r($document->audios());
@@ -228,9 +228,16 @@ print_r("\n\n");
 // print_r($document->links());
 // print_r("\n\n");
 
-print_r("Author : ");
-print_r($document->author());
-print_r("\n\n");
+// print_r("Author : ");
+// print_r($document->author());
+// print_r("\n\n");
+
+
+
+
+
+
+
 
 
 

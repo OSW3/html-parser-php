@@ -26,9 +26,9 @@ class Audios extends AbstractComponent
                 $type = $node->getAttribute('type');
 
                 $srcset = $node->getAttribute('srcset');
-                $srcset = $this->url($srcset);
+                $srcset = $this->absoluteUrl($srcset);
                 
-                $src = $this->url($src);
+                $src = $this->absoluteUrl($src);
 
                 array_push($sources, array(
                     'src' => $src,
@@ -43,10 +43,10 @@ class Audios extends AbstractComponent
                 $type = $sourceTag->getAttribute('type');
 
                 $src = $sourceTag->getAttribute('src');
-                $src = $this->url($src);
+                $src = $this->absoluteUrl($src);
                 
                 $srcset = $sourceTag->getAttribute('srcset');
-                $srcset = $this->url($srcset);
+                $srcset = $this->absoluteUrl($srcset);
 
                 array_push($sources, array(
                     'src' => $src,

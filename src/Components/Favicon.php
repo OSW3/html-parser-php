@@ -7,13 +7,13 @@ use OSW3\HtmlParser\Abstract\AbstractComponent;
 class Favicon extends AbstractComponent 
 {
     private ?DOMElement $tag = null;
-    private array $url = [];
+    // private string $baseHref = "/";
 
-    public function __construct($document, $url)
+    public function __construct($document, string $baseHref = "/")
     {
         parent::__construct($document);
 
-        $this->url = $url;
+        $this->baseHref = $baseHref;
 
         foreach ($this->link() as $node)
         {
@@ -54,12 +54,13 @@ class Favicon extends AbstractComponent
             return $href;
         }
 
-        $url = $this->url['protocol'];
-        $url.= $this->url['authority'];
+        // $url = $this->url['protocol'];
+        // $url.= $this->url['authority'];
+        $url = "";
 
         if (substr($href, 0, 1) !== "/")
         {
-            $url.= "/";
+            $url.= $this->baseHref;
         }
 
         $url.= $href;

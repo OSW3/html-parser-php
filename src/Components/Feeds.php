@@ -1,9 +1,9 @@
 <?php 
 namespace OSW3\HtmlParser\Components;
 
-use OSW3\HtmlParser\AbstractComponent;
+use OSW3\HtmlParser\Abstract\AbstractComponent;
 
-class Feeds extends Abstract\AbstractComponent
+class Feeds extends AbstractComponent
 {
     private const VERSIONS = [
         'application/rss+xml'   => ["RSS 0.90", "RSS 2.0"],

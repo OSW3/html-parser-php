@@ -24,7 +24,7 @@ class Images extends AbstractComponent
             {
                 preg_match("/((^data:image\/(svg)\+xml,)|(\.(jpg|jpeg|png|gif|svg|webp)$))/i", $src, $type);
                 $type = count($type) ? end($type) : null;
-                $src = $this->url($src);
+                $src = $this->absoluteUrl($src);
 
                 array_push($list, array(
                     'src' => $src,

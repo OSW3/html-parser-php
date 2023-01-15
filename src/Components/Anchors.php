@@ -18,7 +18,7 @@ class Anchors extends AbstractComponent
             $target = $node->getAttribute('target');
             $rel = $node->getAttribute('rel');
             $aria_label = $node->getAttribute('aria-label');
-            $url = $this->url($href);
+            $url = $this->absoluteUrl($href);
 
             array_push($list, array(
                 'label'     => $label,

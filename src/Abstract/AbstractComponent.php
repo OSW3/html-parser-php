@@ -45,9 +45,7 @@ abstract class AbstractComponent
         return $this->dom->getElementsByTagName('link');
     }
 
-
-
-    protected function url($href): ?string
+    protected function absoluteUrl($href): ?string
     {
         if (!$href)
         {
@@ -60,8 +58,6 @@ abstract class AbstractComponent
         }
 
         $url = $this->baseHref;
-        // $url = $this->url['protocol'];
-        // $url.= $this->url['authority'];
 
         if (substr($href, 0, 1) !== "/")
         {

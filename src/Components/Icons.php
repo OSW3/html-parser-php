@@ -16,7 +16,7 @@ class Icons extends AbstractComponent
             {
                 $rel = $node->getAttribute('rel');
                 $href = $node->getAttribute('href');
-                $url = $this->url($href);
+                $url = $this->absoluteUrl($href);
                 $type = $this->type($node);
 
                 array_push($list, array(
