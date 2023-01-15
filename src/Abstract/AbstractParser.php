@@ -229,7 +229,7 @@ abstract class AbstractParser
         }
 
         return array(
-            'list' => $twtr->list(),
+            // 'list' => $twtr->list(),
             'card' => $twtr->card(),
             'site' => $twtr->site(),
             'creator' => $twtr->creator(),

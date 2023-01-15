@@ -28,6 +28,7 @@ class Anchors extends AbstractComponent
                 'target'    => $target,
                 'rel'       => $rel,
                 'aria-label' => $aria_label,
+                // TODO: robot rules (follow/nofollow)
             ));
         }
 
